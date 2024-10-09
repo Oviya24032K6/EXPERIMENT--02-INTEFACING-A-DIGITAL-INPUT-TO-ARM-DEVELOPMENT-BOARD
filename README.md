@@ -51,10 +51,48 @@ The full form of an ARM is an advanced reduced instruction set computer (RISC) m
 
 
 ## STM 32 CUBE PROGRAM :
+```
+#include "main.h"
+#include "stdbool.h"
+bool pushbutton;
 
+void SystemColck_Config(void);
+static void MX_GPIO_Init(void);
+
+int main(void)
+{
+ HAL_Int();
+ SystemClock_Config();
+ MX_GPIO_Init();
+
+while (1)
+  {
+    pushbutton=HAL_GPIO_ReadPin(GPIOC,GPIO_PIN_13);
+    if(pushbutton==0)
+    {
+    	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_SET);
+    	HAL_Delay(2000);
+    	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+    	HAL_Delay(2000);
+    }
+    else
+    {
+    	HAL_GPIO_WritePin(GPIOA, GPIO_PIN_5, GPIO_PIN_RESET);
+    	HAL_Delay(2000);
+    }
+  }
+```
+
+![image](## LED OFF:
+![image](https://github.com/hariharana59/EXPERIMENT--02-INTEFACING-A-DIGITAL-INPUT-TO-ARM-DEVELOPMENT-BOARD/assets/144980130/cbfe95b7-0a6a-4b69-9b2c-81cb42b4b1d0)
+
+## LED ON:
+![image](https://github.com/hariharana59/EXPERIMENT--02-INTEFACING-A-DIGITAL-INPUT-TO-ARM-DEVELOPMENT-BOARD/assets/144980130/31d355c4-c57b-4c50-9d37-425cf8b3a54b)https://github.com/user-attachments/assets/4b7d6f51-3971-4db9-8967-01e02697c931)
 
 
 ## Output  :
+
+
  
 ## layout of the circuit 
  
